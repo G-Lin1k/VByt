@@ -1,0 +1,39 @@
+.card {
+    transition: transform 0.3s ease-in-out;
+}
+
+.card:hover {
+    transform: scale(0.9);
+    opacity: 0.3;
+}
+
+.info {
+    transition: transform 0.3s ease-in-out;
+}
+
+.info:hover {
+    transform: scale(0.8);
+    opacity: 0.7;
+}
+
+
+.stars {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    padding-right: 10px;
+}
+
+.categoryButton{
+    transition: transform 0.3s ease-in-out;
+}
+
+.categoryButton:hover{
+    opacity: 0.7;
+}
+
+
+.card-link {
+    text-decoration: none; /* Remove underline from links */
+}
+

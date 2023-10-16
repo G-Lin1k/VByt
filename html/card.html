@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Course Cards</title>
+    <!-- Include Bootstrap CSS (you should replace the URL with the actual Bootstrap CSS file) -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+    <div id="container" class="container">
+        <div class="row" id="cardRow">
+            <!-- Existing cards or dynamically generated cards will be placed here -->
+        </div>
+    </div>
+
+    <!-- JavaScript code to dynamically create and append multiple cards with changing image file names -->
+    <script>
+        function createCard(imagePath, title, rating, description) {
+            const cardCol = document.createElement("div");
+            cardCol.className = "col-md-3"; // 4 columns per row for medium-sized screens
+            const cardDiv = document.createElement("div");
+            cardDiv.className = "card me-4 mb-3 floatCard";
+            cardDiv.style = "width: 100%;";
+            
+            const img = document.createElement("img");
+            img.className = "card-img-top";
+            img.src = imagePath;
+            img.alt = "Card image cap";
+            
+            const cardBody = document.createElement("div");
+            cardBody.className = "card-body";
+            cardBody.style = "text-align: justify;";
+            
+            const titleElement = document.createElement("p");
+            titleElement.className = "card-text fs-5 m-0 p-0";
+            titleElement.textContent = title;
+            
+            const ratingElement = document.createElement("p");
+            ratingElement.className = "card-text fw-bold fs-4 m-0 p-0";
+            ratingElement.textContent = rating;
+            
+            const descriptionElement = document.createElement("p");
+            descriptionElement.className = "card-text fs-6";
+            descriptionElement.textContent = description;
+            
+            cardBody.appendChild(titleElement);
+            cardBody.appendChild(ratingElement);
+            cardBody.appendChild(descriptionElement);
+            
+            cardDiv.appendChild(img);
+            cardDiv.appendChild(cardBody);
+            
+            cardCol.appendChild(cardDiv);
+            
+            return cardCol;
+        }
+
+        const container = document.getElementById("cardRow");
+
+        // Define the base path for image files
+        const imagePathBase = "/image/courses/course_";
+
+        const cardData = [
+            {
+                title: "Mathematics",
+                rating: "Best Rating",
+                description: "A mathematics course is an educational program designed to teach the principles, theories, and applications of mathematics. It covers a wide range of topics, including algebra, calculus, geometry, statistics, and more."
+            },
+            {
+                title: "Science",
+                rating: "Top Pick",
+                description: "Explore the fascinating world of science with our science courses. Learn about biology, chemistry, physics, and more."
+            },
+            {
+                title: "History",
+                rating: "Highly Recommended",
+                description: "Dive into the past and discover the stories and events that have shaped our world. History courses cover a wide range of historical periods and topics."
+            },
+            {
+                title: "Computer Science",
+                rating: "Tech Enthusiasts' Choice",
+                description: "Master the art of coding and software development with our computer science courses. Learn programming languages, algorithms, and more."
+            },
+            {
+                title: "Mathematics",
+                rating: "Best Rating",
+                description: "A mathematics course is an educational program designed to teach the principles, theories, and applications of mathematics. It covers a wide range of topics, including algebra, calculus, geometry, statistics, and more."
+            },
+            {
+                title: "Science",
+                rating: "Top Pick",
+                description: "Explore the fascinating world of science with our science courses. Learn about biology, chemistry, physics, and more."
+            },
+            {
+                title: "History",
+                rating: "Highly Recommended",
+                description: "Dive into the past and discover the stories and events that have shaped our world. History courses cover a wide range of historical periods and topics."
+            },
+            {
+                title: "Computer Science",
+                rating: "Tech Enthusiasts' Choice",
+                description: "Master the art of coding and software development with our computer science courses. Learn programming languages, algorithms, and more."
+            },
+            {
+                title: "Mathematics",
+                rating: "Best Rating",
+                description: "A mathematics course is an educational program designed to teach the principles, theories, and applications of mathematics. It covers a wide range of topics, including algebra, calculus, geometry, statistics, and more."
+            },
+            {
+                title: "Science",
+                rating: "Top Pick",
+                description: "Explore the fascinating world of science with our science courses. Learn about biology, chemistry, physics, and more."
+            },
+            {
+                title: "History",
+                rating: "Highly Recommended",
+                description: "Dive into the past and discover the stories and events that have shaped our world. History courses cover a wide range of historical periods and topics."
+            },
+            {
+                title: "Computer Science",
+                rating: "Tech Enthusiasts' Choice",
+                description: "Master the art of coding and software development with our computer science courses. Learn programming languages, algorithms, and more."
+            },
+            {
+                title: "Mathematics",
+                rating: "Best Rating",
+                description: "A mathematics course is an educational program designed to teach the principles, theories, and applications of mathematics. It covers a wide range of topics, including algebra, calculus, geometry, statistics, and more."
+            },
+            {
+                title: "Science",
+                rating: "Top Pick",
+                description: "Explore the fascinating world of science with our science courses. Learn about biology, chemistry, physics, and more."
+            },
+            {
+                title: "History",
+                rating: "Highly Recommended",
+                description: "Dive into the past and discover the stories and events that have shaped our world. History courses cover a wide range of historical periods and topics."
+            },
+            {
+                title: "Computer Science",
+                rating: "Tech Enthusiasts' Choice",
+                description: "Master the art of coding and software development with our computer science courses. Learn programming languages, algorithms, and more."
+            },
+            // Add more card data here
+        ];
+
+        cardData.forEach((data, index) => {
+            const card = createCard(`${imagePathBase}${index + 1}.png`, data.title, data.rating, data.description);
+            container.appendChild(card);
+        });
+    </script>
+
+    <!-- Include Bootstrap JS (you should replace the URL with the actual Bootstrap JS file) -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
